@@ -16,6 +16,7 @@ EXAMPLE_MAP=(
   'http-upload-server:io.netty.example.http.upload.HttpUploadServer'
   'websocket-client:io.netty.example.http.websocketx.client.WebSocketClient'
   'websocket-server:io.netty.example.http.websocketx.server.WebSocketServer'
+  'websocket-benchmark:io.netty.example.http.websocketx.benchmarkserver.WebSocketServer'
   'http2-client:io.netty.example.http2.helloworld.client.Http2Client'
   'http2-server:io.netty.example.http2.helloworld.server.Http2Server'
   'http2-tiles:io.netty.example.http2.tiles.Launcher'
@@ -112,4 +113,4 @@ done
 
 cd "`dirname "$0"`"/example
 echo "[INFO] Running: $EXAMPLE ($EXAMPLE_CLASS $EXAMPLE_ARGS)"
-exec mvn -q -nsu compile exec:exec -Dcheckstyle.skip=true -Dforbiddenapis.skip=true -Dforcenpn="$FORCE_NPN" -DargLine.example="$EXAMPLE_ARGS" -DexampleClass="$EXAMPLE_CLASS"
+exec mvn -e -q -nsu compile exec:exec -Dcheckstyle.skip=true -Dforbiddenapis.skip=true -Dforcenpn="$FORCE_NPN" -DargLine.example="$EXAMPLE_ARGS" -DexampleClass="$EXAMPLE_CLASS"
